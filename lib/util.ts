@@ -14,23 +14,6 @@ export interface UtilSupportsObj {
 
 const DEFAULT_CONFIG = {
 	iceServers: [
-		{ urls: "stun:stun.l.google.com:19302" },
-		{
-			urls: [
-				"turn:eu-0.turn.peerjs.com:3478",
-				"turn:eu-1.turn.peerjs.com:3478",
-			],
-			username: "peerjs",
-			credential: "peerjsp",
-		},
-		{
-			urls: [
-				"turn:us-0.turn.peerjs.com:3478",
-				"turn:us-1.turn.peerjs.com:3478",
-			],
-			username: "peerjs",
-			credential: "peerjsp",
-		},
 	],
 	sdpSemantics: "unified-plan",
 };
