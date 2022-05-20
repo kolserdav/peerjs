@@ -13,8 +13,7 @@ export interface UtilSupportsObj {
 }
 
 const DEFAULT_CONFIG = {
-	iceServers: [
-	],
+	iceServers: [],
 	sdpSemantics: "unified-plan",
 };
 
