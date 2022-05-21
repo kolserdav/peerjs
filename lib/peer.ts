@@ -249,7 +249,7 @@ export class Peer extends EventEmitter<PeerEvents> {
 		});
 
 		socket.on(SocketEventType.Disconnected, () => {
-			if (this.disconnected) {
+			if (this.disconnected || SocketEventType.Disconnected === 'disconnected') {
 				return;
 			}
 
