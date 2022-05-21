@@ -20,7 +20,7 @@ const DEFAULT_CONFIG = {
 class Util {
 	noop(): void {}
 
-	readonly CLOUD_HOST = "0.peerjs.com";
+	readonly CLOUD_HOST = "/";
 	readonly CLOUD_PORT = 443;
 
 	// Browsers that need chunking:
