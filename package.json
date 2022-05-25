@@ -150,12 +150,16 @@
 	},
 	"scripts": {
 		"check": "tsc --noEmit",
+		"tsc": "tsc -p .",
 		"watch": "parcel watch",
-		"build": "rm -rf dist && parcel build && cp dist/peerjs.cjs dist/peerjs.js && cp dist/peerjs.min.cjs dist/peerjs.min.js",
+		"build": "npm run remove-dist && parcel build && npm run copy-cjs && npm run copy-minjs",
 		"prepublishOnly": "npm run build",
 		"test": "mocha -r ts-node/register -r jsdom-global/register test/**/*.ts",
 		"format": "prettier --write .",
-		"semantic-release": "semantic-release"
+		"semantic-release": "semantic-release",
+		"remove-dist": "node -e \"fs.rmSync('src/dist', { recursive: true, force: true })\"",
+		"copy-cjs": "node -e \"fs.copyFileSync('dist/peerjs.cjs', 'dist/peerjs.js')\"",
+		"copy-minjs": "node -e \"fs.copyFileSync('dist/peerjs.min.cjs', 'dist/peerjs.min.js')\""
 	},
 	"devDependencies": {
 		"@parcel/config-default": "^2.5.0",
